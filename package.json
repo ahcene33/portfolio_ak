@@ -1,0 +1,27 @@
+{
+  "name": "portfolio_ak",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "lucide-react": "0.314.0",
+    "framer-motion": "11.0.12",
+    "recharts": "2.12.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.1",
+    "autoprefixer": "10.4.16",
+    "postcss": "8.4.33",
+    "typescript": "5.4.4",
+    "@types/react": "18.2.48",
+    "@types/node": "20.12.7"
+  }
+}

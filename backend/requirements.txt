@@ -1,0 +1,12 @@
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-dotenv==1.0.1
+pydantic==2.7.2
+openai==1.34.0
+chromadb==0.5.0
+faiss-cpu==1.8.0.post1
+tiktoken==0.7.0
+# Optional for PDF parsing
+pypdf==5.0.0
+# Optional for sentence‑level embedding (if you use openai embeddings)
+sentence-transformers==3.0.0

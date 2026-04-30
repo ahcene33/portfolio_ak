@@ -1,0 +1,215 @@
+{
+  "identity": {
+    "name": "Ahcene KAHLA",
+    "headline": "Fondateur AKA Services | Responsable d’équipe data distribuée | Data Analyst | Ingénieur énergie",
+    "location": "France · Remote / Hybride",
+    "email": "kahla.ahcene@outlook.com",
+    "phone": "+33 7 83 08 62 34"
+  },
+
+  "profiles": {
+    "linkedin": "https://www.linkedin.com/in/ahcene-k",
+    "github": "https://github.com/ahcene33",
+    "freelance_profile": "Profil freelance"
+  },
+
+  "media": {
+    "profile_picture": "/assets/profile.jpg",
+    "pdf_documents": [
+      "/assets/rapport_Dashboard_Exemple_SQL.pdf",
+      "/assets/rapport_Dashboard_Exemple_RH.pdf"
+    ]
+  },
+
+  "profile_summary": "J’aide les entreprises à transformer des données brutes en insights exploitables, systèmes automatisés et outils d’aide à la décision. À travers AKA Services, je pilote des projets data distribués et coordonne des experts seniors pour livrer des solutions complètes incluant data engineering, BI et machine learning. Avec une forte base en ingénierie énergie, environnement et aéronautique, j’applique une approche industrielle et structurée aux problématiques data. Je privilégie l’impact business plutôt que la seule performance des modèles.",
+
+  "services": {
+    "data_delivery": [
+      "Analyse de données & tableaux de bord BI",
+      "Pipelines de données ETL / ELT",
+      "Modèles de machine learning (prédiction & optimisation)",
+      "Intégration d’API & automatisation des systèmes",
+      "Nettoyage, transformation et structuration des données",
+      "Systèmes de KPI et suivi de performance"
+    ]
+  },
+
+  "business_value": [
+    "Prise de décision plus rapide et plus fiable",
+    "Automatisation des tâches de reporting manuel",
+    "Vision claire de la performance business",
+    "Insights prédictifs pour optimisation",
+    "Systèmes data scalables et maintenables",
+    "Passerelle entre besoins métier et technique"
+  ],
+
+  "professional_experience": [
+    {
+      "company": "AKA SERVICES",
+      "role": "Fondateur & Responsable d’équipe data distribuée senior",
+      "period": "Avril 2026 – Présent",
+      "location": "France · Remote / Hybride",
+      "description": "Équipe data distribuée délivrant des solutions end-to-end pour les entreprises.",
+      "responsibilities": [
+        "Conception et livraison d’architectures data complètes",
+        "Développement de pipelines ETL et workflows data",
+        "Modèles de machine learning pour prévision et optimisation",
+        "Tableaux de bord BI et systèmes KPI",
+        "Intégration d’API et automatisation de collecte de données",
+        "Transformation de données brutes en insights exploitables",
+        "Support à la décision opérationnelle et stratégique",
+        "Livraison de systèmes data en production"
+      ]
+    },
+    {
+      "company": "WILD CODE SCHOOL",
+      "role": "Data Analyst (Reconversion réussie)",
+      "period": "Mars 2025 – Août 2025",
+      "description": "Formation appliquée en analyse de données, machine learning et data engineering."
+    },
+    {
+      "company": "Parcours ingénieur",
+      "role": "Ingénieur énergie & environnement / BTP ingénierie bâtiment",
+      "period": "Août 2018 – Mars 2025",
+      "description": "Expérience en ingénierie des systèmes énergétiques, environnement des bâtiments."
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Tableau de bord décisionnel (SQL + Power BI)",
+      "description": "Construction d’un modèle en étoile, création de KPI métiers, automatisation du reporting et connexion SQL → Power BI pour analyse en temps réel.",
+      "stack": ["SQL", "Power BI"],
+      "domain": "Business Intelligence",
+      "pdf": "/assets/Presentation_finale_projet1.pdf",
+      "github": null,
+      "streamlit": null
+    },
+
+    {
+      "title": "Système de recommandation de films",
+      "description": "Système basé sur IMDb/TMDB. Nettoyage, feature engineering, filtrage collaboratif et modèle scikit-learn.",
+      "stack": ["Python", "scikit-learn"],
+      "domain": "Machine Learning",
+      "github": null,
+      "streamlit": null,
+      "pdf": null
+    },
+
+    {
+      "title": "Plateforme d’optimisation énergétique",
+      "description": "Application Streamlit intégrant données énergie, météo et prix. Modèle Random Forest pour optimisation et simulation de scénarios énergétiques.",
+      "stack": ["Python", "Streamlit", "Machine Learning"],
+      "domain": "Énergie / ML",
+      "github": "https://github.com/ahcene33/flexibility-demo",
+      "streamlit": "https://elecflexibilityinfrance.streamlit.app/",
+      "pdf": null
+    },
+
+    {
+      "title": "Crypto ML Portfolio",
+      "description": "Pipeline de données crypto + modèle LightGBM pour signaux d’achat/vente, simulation de portefeuille et gestion du risque (Sharpe, VaR, drawdown).",
+      "stack": ["Python", "LightGBM"],
+      "domain": "Finance / ML",
+      "github": "https://github.com/ahcene33/crypto_ml",
+      "streamlit": "https://crypto-ml-portfolio.streamlit.app/",
+      "pdf": null
+    },
+
+    {
+      "title": "Projet consommation carburant aéronautique (kérosène)",
+      "description": "Projet end-to-end aviation : API OpenSky + météo + scraping + clustering + estimation consommation carburant + modèle prédictif d’optimisation des vols.",
+      "stack": ["Python", "APIs", "Machine Learning", "Clustering"],
+      "domain": "Aéronautique / Énergie",
+      "github": null,
+      "streamlit": null,
+      "pdf": null
+    },
+
+    {
+      "title": "Dashboard RH (Power BI)",
+      "description": "Analyse RH : salaires, effectifs, contrats et télétravail. KPI : évolution des salaires, médiane, répartition géographique et croissance des effectifs.",
+      "stack": ["Power BI", "SQL"],
+      "domain": "RH / BI",
+      "pdf": "/assets/rapport_Dashboard_Exemple_RH.pdf",
+      "github": null,
+      "streamlit": null
+    }
+  ],
+
+  "technical_skills": [
+    "Python",
+    "SQL",
+    "Power BI",
+    "Machine Learning",
+    "Data Engineering",
+    "ETL / ELT",
+    "API REST",
+    "Web Scraping",
+    "Pipelines de données",
+    "PostgreSQL",
+    "MySQL",
+    "AWS S3",
+    "Flask",
+    "Streamlit",
+    "Git",
+    "GitHub",
+    "Docker",
+    "Airflow",
+    "Mage.ai"
+  ],
+
+  "industry_expertise": [
+    "Systèmes énergétiques et optimisation",
+    "Aéronautique et propulsion",
+    "Analyse de données environnementales",
+    "Systèmes data industriels",
+    "Business intelligence et reporting",
+    "Finance et gestion du risque"
+  ],
+
+  "education": [
+    {
+      "school": "Wild Code School",
+      "degree": "Data Science / Data Analyst",
+      "year": 2025
+    },
+    {
+      "school": "Université Sorbonne",
+      "degree": "Master – Ingénierie énergie & environnement",
+      "year": 2018
+    },
+    {
+      "school": "IAB",
+      "degree": "Licence – Aéronautique / Propulsion avion",
+      "year": 2013
+    }
+  ],
+
+  "languages": {
+    "français": "Langue maternelle",
+    "arabe": "Langue maternelle",
+    "anglais": "Courant (TOEIC 825/990 - B2)"
+  },
+
+  "keywords": [
+    "Data Analyst",
+    "Data Engineer",
+    "Data Scientist",
+    "Python",
+    "SQL",
+    "Power BI",
+    "Machine Learning",
+    "ETL",
+    "Intégration API",
+    "Web scraping",
+    "Dashboards",
+    "Analyse prédictive",
+    "Data énergie",
+    "Data aéronautique",
+    "Data finance",
+    "Automatisation",
+    "Pipelines de données",
+    "Modélisation du risque"
+  ]
+}
