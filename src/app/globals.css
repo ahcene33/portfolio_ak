@@ -1,17 +1,25 @@
+/* ------------------------------------------------------------- */
+/* 1️⃣  Font import – doit être *tout en haut* du fichier CSS   */
+/* ------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* ------------------------------------------------------------- */
+/* 2️⃣  Tailwind directives (must come *after* @import)          */
+/* ------------------------------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Font import – Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+/* ------------------------------------------------------------- */
+/* 3️⃣  Vos styles personnalisés (globales)                     */
+/* ------------------------------------------------------------- */
 html,
 body {
   @apply bg-darkbg text-white antialiased;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Scrollbar – subtle dark */
+/* Scrollbar – subtle cyan */
 ::-webkit-scrollbar {
   width: 8px;
 }
