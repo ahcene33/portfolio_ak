@@ -6,6 +6,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ChatbotButton() {
   const [open, setOpen] = useState(false);
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const sendMessage = async () => {
+    if (!question.trim()) return;
+    setLoading(true);
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      });
+      const json = await res.json();
+      setAnswer(json.answer ?? 'No answer');
+    } catch (e) {
+      console.error(e);
+      setAnswer('Error contacting the AI service');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -20,7 +42,7 @@ export default function ChatbotButton() {
         <MessageSquare className="h-6 w-6" />
       </motion.button>
 
-      {/* Simple modal wrapper – you can replace with a full‑blown chat UI later */}
+      {/* Modal */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -40,16 +62,35 @@ export default function ChatbotButton() {
               <h3 className="text-lg font-semibold text-primary mb-4">
                 IA Assistant
               </h3>
-              <p className="text-sm text-gray-400">
-                Ce chatbot est alimenté par votre CV et votre profil LinkedIn. Il
-                répondra uniquement à des questions liées à votre expérience
-                professionnelle.
-              </p>
+
+              <textarea
+                rows={4}
+                className="w-full p-2 mb-2 text-gray-800 rounded"
+                placeholder="Ask me anything about my profile…"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                disabled={loading}
+              />
+
               <button
-                className="mt-6 w-full py-2 bg-primary text-darkbg rounded-md hover:bg-blue-500 transition"
+                className="w-full py-2 bg-primary text-darkbg rounded-md hover:bg-blue-500 transition"
+                onClick={sendMessage}
+                disabled={loading}
+              >
+                {loading ? 'Thinking…' : 'Send'}
+              </button>
+
+              {answer && (
+                <div className="mt-4 p-3 bg-gray-800 text-white rounded">
+                  <p>{answer}</p>
+                </div>
+              )}
+
+              <button
+                className="mt-4 w-full py-1 text-sm text-gray-400 underline"
                 onClick={() => setOpen(false)}
               >
-                Fermer
+                Close
               </button>
             </motion.div>
           </motion.div>

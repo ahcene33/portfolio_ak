@@ -6,22 +6,22 @@ import ChatbotButton from '@/app/components/ChatbotButton';
 export default function HomePage() {
   return (
     <>
-      {/* Hero section */}
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <Hero />
       </section>
 
-      {/* Stats section */}
+      {/* Stats */}
       <section className="py-16 bg-darkbg">
         <Stats />
       </section>
 
-      {/* Skills section */}
+      {/* Skills */}
       <section className="py-20 bg-darkbg">
         <Skills />
       </section>
 
-      {/* Floating Chatbot button */}
+      {/* Chat‑bot button */}
       <ChatbotButton />
     </>
   );

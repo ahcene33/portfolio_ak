@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        {/* Navbar is sticky + blur */}
+        {/* Sticky + blur Navbar */}
         <Navbar />
         <main className="min-h-screen pt-24 bg-darkbg">{children}</main>
       </body>

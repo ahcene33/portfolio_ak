@@ -3,68 +3,70 @@
 import { useEffect, useState } from 'react';
 import {
   BarChart2,
-  Briefcase,
+  Calendar,
   Zap,
   Award,
-  Calendar,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLinkedIn } from '@/lib/useLinkedIn';
 
-type StatsData = {
+type StatItem = {
   label: string;
-  value: string;
-  icon: JSX.Element;
   description: string;
+  icon: JSX.Element;
 };
 
 export default function Stats() {
-  const [stats, setStats] = useState<StatsData[]>([]);
+  const data = useLinkedIn();
+  const [stats, setStats] = useState<StatItem[]>([]);
 
-  // Charge les stats depuis le JSON LinkedIn (public/assets/linkedin.json)
+  // Helper – compute total years of experience from the "period" strings
+  const computeYears = (exp: any[]) => {
+    if (!exp?.length) return 0;
+    const years = exp
+      .map((e) => {
+        const m = e.period?.match(/(\d{4})/g);
+        // period can contain two years (start – end) – we keep the first one
+        return m ? parseInt(m[0]) : null;
+      })
+      .filter(Boolean) as number[];
+    if (!years.length) return 0;
+    const min = Math.min(...years);
+    const max = Math.max(...years);
+    return max - min + 1;
+  };
+
   useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const res = await fetch('/assets/linkedin.json');
-        const data = await res.json();
+    if (!data) return;
 
-        // Exemple de structure simplifiée – ajustez selon votre JSON réel
-        const projects = data.projects?.length ?? 0;
-        const yearsData = data.years_experience?.data ?? 0;
-        const yearsEnergy = data.years_experience?.energy ?? 0;
+    const projectCount = data.projects?.length ?? 0;
+    const yearsExp = computeYears(data.professional_experience);
+    const industryYears = data.industry_expertise?.length ?? 0; // a simple proxy for “energy & env.”
 
-        const newStats: StatsData[] = [
-          {
-            label: `${projects}+`,
-            value: 'Projects',
-            icon: <BarChart2 className="h-8 w-8 text-primary" />,
-            description: 'Projects Completed',
-          },
-          {
-            label: `${yearsData}+`,
-            value: 'Years',
-            icon: <Calendar className="h-8 w-8 text-cyan-400" />,
-            description: 'Experience in Data',
-          },
-          {
-            label: `${yearsEnergy}+`,
-            value: 'Years',
-            icon: <Zap className="h-8 w-8 text-purple-400" />,
-            description: 'Energy & Env. Expertise',
-          },
-          {
-            label: '5+',
-            value: 'Certificates',
-            icon: <Award className="h-8 w-8 text-blue-400" />,
-            description: 'Professional Certifications',
-          },
-        ];
-        setStats(newStats);
-      } catch (err) {
-        console.error('Failed to load LinkedIn JSON', err);
-      }
-    };
-    fetchStats();
-  }, []);
+    const newStats: StatItem[] = [
+      {
+        label: `${projectCount}+`,
+        description: 'Projects Completed',
+        icon: <BarChart2 className="h-8 w-8 text-primary" />,
+      },
+      {
+        label: `${yearsExp}+`,
+        description: 'Years Experience',
+        icon: <Calendar className="h-8 w-8 text-cyan-400" />,
+      },
+      {
+        label: `${industryYears}+`,
+        description: 'Industry Expertise',
+        icon: <Zap className="h-8 w-8 text-purple-400" />,
+      },
+      {
+        label: '5+',
+        description: 'Certificates',
+        icon: <Award className="h-8 w-8 text-blue-400" />,
+      },
+    ];
+    setStats(newStats);
+  }, [data]);
 
   return (
     <motion.div
@@ -74,15 +76,15 @@ export default function Stats() {
       transition={{ duration: 0.8 }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((item, idx) => (
+        {stats.map((s, i) => (
           <div
-            key={idx}
+            key={i}
             className="flex items-center space-x-4 p-5 rounded-xl bg-darkbg/70 border border-gray-800 hover:border-primary transition-colors"
           >
-            <div className="flex-shrink-0">{item.icon}</div>
+            <div>{s.icon}</div>
             <div>
-              <p className="text-2xl font-bold text-primary">{item.label}</p>
-              <p className="text-sm text-gray-400">{item.description}</p>
+              <p className="text-2xl font-bold text-primary">{s.label}</p>
+              <p className="text-sm text-gray-400">{s.description}</p>
             </div>
           </div>
         ))}
